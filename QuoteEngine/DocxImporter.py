@@ -13,13 +13,13 @@ class DocxImporter(IngestorInterface):
         if not cls.can_ingest(path):
             raise Exception('cannot ingest exception')
 
-        QuoteModels = []
+        quotes = []
         doc = docx.Document(path)
 
         for para in doc.paragraphs:
             if para.text != "":
-                parse = para.text.split(',')
-                new_quotemodel = QuoteModel(parse[0], parse[1])
-                QuoteModels.append(new_quotemodel)
+                parse = para.text.split(' - ')
+                new_quote = QuoteModel(parse[0], parse[1])
+                quotes.append(new_quote)
 
-        return QuoteModels
+        return quotes
