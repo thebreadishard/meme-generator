@@ -6,6 +6,7 @@ from .QuoteModel import QuoteModel
 
 
 class CSVImporter(IngestorInterface):
+    """Import quotes from a csv-file."""
     allowed_extensions = ['csv']
 
     @classmethod

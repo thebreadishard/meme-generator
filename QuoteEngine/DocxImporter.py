@@ -6,6 +6,7 @@ from .QuoteModel import QuoteModel
 
 
 class DocxImporter(IngestorInterface):
+    """Import quotes from a Word-document."""
     allowed_extensions = ['docx']
 
     @classmethod

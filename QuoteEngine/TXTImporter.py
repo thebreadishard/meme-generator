@@ -5,6 +5,7 @@ from .QuoteModel import QuoteModel
 
 
 class TXTImporter(IngestorInterface):
+    """Import quotes from a txt-file."""
     allowed_extensions = ['txt']
 
     @classmethod
