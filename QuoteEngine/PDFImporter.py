@@ -3,7 +3,7 @@ import subprocess
 import os
 import random
 
-from .IngestorInterface import IngestorInterface
+from .QuoteEngine import IngestorInterface
 from .QuoteModel import QuoteModel
 
 

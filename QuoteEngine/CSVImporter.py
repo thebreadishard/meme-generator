@@ -1,7 +1,7 @@
 from typing import List
 import pandas
 
-from .IngestorInterface import IngestorInterface
+from .QuoteEngine import IngestorInterface
 from .QuoteModel import QuoteModel
 
 
@@ -18,6 +18,6 @@ class CSVImporter(IngestorInterface):
 
         for index, row in df.iterrows():
             new_quote = QuoteModel(row['body'], row['author'])
-            append.quotes(new_quote)
+            quotes.append(new_quote)
 
         return quotes
