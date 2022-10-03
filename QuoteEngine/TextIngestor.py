@@ -4,7 +4,7 @@ from .QuoteEngine import IngestorInterface
 from .QuoteModel import QuoteModel
 
 
-class TXTImporter(IngestorInterface):
+class TextIngestor(IngestorInterface):
     """Import quotes from a txt-file."""
     allowed_extensions = ['txt']
 

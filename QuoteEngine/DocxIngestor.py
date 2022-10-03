@@ -5,7 +5,7 @@ from .QuoteEngine import IngestorInterface
 from .QuoteModel import QuoteModel
 
 
-class DocxImporter(IngestorInterface):
+class DocxIngestor(IngestorInterface):
     """Import quotes from a Word-document."""
     allowed_extensions = ['docx']
 

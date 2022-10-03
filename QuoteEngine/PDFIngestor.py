@@ -7,7 +7,7 @@ from .QuoteEngine import IngestorInterface
 from .QuoteModel import QuoteModel
 
 
-class PDFImporter(IngestorInterface):
+class PDFIngestor(IngestorInterface):
     """Import quotes from a pdf-document."""
     allowed_extensions = ['pdf']
 
