@@ -8,6 +8,7 @@ class IngestorInterface(ABC):
 
     allowed_extensions = []
 
+    @classmethod
     @abstractmethod
     def can_ingest(cls, path):
         """Let's see if we can ingest this."""
