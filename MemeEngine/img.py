@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 
-def generate_meme(in_path, out_path, message=None, crop=None, width=None):
+def make_meme(in_path, out_path, message=None, crop=None, width=None):
     """Create a Meme With a Quote
 
     Arguments:
@@ -30,7 +30,7 @@ def generate_meme(in_path, out_path, message=None, crop=None, width=None):
     return out_path
 
 if __name__=='__main__':
-    print(generate_meme('./imgs/img.jpg',
+    print(make_meme('./imgs/img.jpg',
                             './imgs/out.jpg',
                             'woof!',
                             (450, 900, 900, 1300),
