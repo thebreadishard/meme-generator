@@ -1,46 +1,34 @@
 Meme Generator
 
-The goal of this project is to build a "meme generator" – a multimedia application to dynamically generate memes, including an image with an overlaid quote.
+This project is a "meme generator" – a multimedia application to dynamically generate memes, including an image with an overlaid quote.
 
-The application you build must:
+The application interacts with a variety of complex filetypes. It loads quotes from a variety of filetypes (PDF, Word Documents, CSVs, Text files).  It loads, manipulates, and saves images.
+It accepts dynamic user input through a command-line tool and a web service. 
 
-Interact with a variety of complex filetypes. This emulates the kind of data you’ll encounter in a data engineering role.
-Load quotes from a variety of filetypes (PDF, Word Documents, CSVs, Text files).
-Load, manipulate, and save images.
-Accept dynamic user input through a command-line tool and a web service. This emulates the kind of work you’ll encounter as a full stack developer.
-This project will give you a hands-on opportunity to practice what you've learned in this course, such as:
+Sample quotes and images of Xander the pup are in src/_data/
 
-Object-oriented thinking in Python, including abstract classes, class methods, and static methods.
-DRY (don’t repeat yourself) principles of class and method design.
-Working with modules and packages in Python.
-
-Sample quotes and images of Xander the pup in src/_data/
-
-A basic flask server that will consume your models and make them usable through a web interface. The main code for this flask server is in app.py.
+A basic flask server consumes the models and make them usable through a web interface. The main code for this flask server is in app.py.
 
 HTML templates are in templates/
 
 Quote Engine
+
 The Quote Engine module is responsible for ingesting many types of files that contain quotes. For our purposes, a quote contains a body and an author:
 
 "This is a quote body" - Author
 
-This module will be composed of many classes and will demonstrate your understanding of complex inheritance, abstract classes, classmethods, strategy objects and other fundamental programming principles.
+This module is composed of many classes and demonstrates complex inheritance, abstract classes, classmethods, strategy objects and other fundamental programming principles.
 
-Quote Format
+Ingestors
 
-Example quotes are provided in a variety of files. Take a moment to review the file formats in ./_data/SimpleLines and ./_data/DogQuotes. Your task is to design a system to extract each quote line-by-line from these files.
-
-Ingestors\
-
-An abstract base class, IngestorInterface should define two methods with the following class method signatures:
+An abstract base class, IngestorInterface, defines two methods with the following class method signatures:
 
 def can_ingest(cls, path: str) -> boolean
 def parse(cls, path: str) -> List[QuoteModel]
 
-Separate strategy objects should realize IngestorInterface for each file type (csv, docx, pdf, txt).
+Separate strategy objects realize IngestorInterface for each file type (csv, docx, pdf, txt).
 
-A final Ingestor class should realize the IngestorInterface abstract base class and encapsulate your helper classes. It should implement logic to select the appropriate helper for a given file based on filetype.
+A final Ingestor class realizes the IngestorInterface abstract base class and encapsulate your helper classes. It should implement logic to select the appropriate helper for a given file based on filetype.
 
 Meme Engine Module
 
