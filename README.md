@@ -32,19 +32,23 @@ A final Ingestor class realizes the IngestorInterface abstract base class and en
 
 Meme Engine Module
 
-The Meme Engine Module is responsible for manipulating and drawing text onto images. It will reinforce your understanding of object-oriented thinking while demonstrating your skill using a more advanced third party library for image manipulation.
+The Meme Engine Module is responsible for manipulating and drawing text onto images. 
 
-The module loads an image using Pillow (PIL).
+It loads an image using Pillow (PIL).
+
 It resizes the image so the width is at most 500px and the height is scaled proportionally.
+
 It adds a quote body and a quote author to the image.
+
 It saves the manipulated image.
 
-Package your Application
-Larger, complex systems need an interface for users to interact with. We'll package the project as a command line tool and as a simple web service.
+Packaging the Application
 
-Create a Command-Line Interface tool
+The project is packaged as a command line tool and as a simple web service.
 
-The project contains a simple cli app starter code in meme.py. This file contains @TODO tasks for you to complete. The utility can be run from the terminal by invoking python3 meme.py
+The Command-Line Interface tool
+
+The project contains a simple cli app starter code in meme.py. The utility can be run from the terminal by invoking python3 meme.py
 
 The script must take three optional CLI arguments:
 
@@ -56,9 +60,9 @@ The script must take three optional CLI arguments:
 
 The script returns a path to a generated image. If any argument is not defined, a random selection is used.
 
-Complete the Flask app
+The Flask app
 
-The project contains a flask app starter code in app.py. This file contains @TODO tasks for you to complete.
+The project contains flask app code in app.py. 
 
 The app uses the Quote Engine Module and Meme Generator Modules to generate a random captioned image.
 
