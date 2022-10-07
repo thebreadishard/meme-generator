@@ -1,6 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont
 
-def make_meme(in_path, out_path, message=None, crop=None, width=None):
+
+def make_meme(in_path, out_path, body=None, author=None, crop=None, width=None):
     """Create a Meme With a Quote
 
     Arguments:
@@ -17,21 +18,27 @@ def make_meme(in_path, out_path, message=None, crop=None, width=None):
         img = img.crop(crop)
 
     if width is not None:
-        ratio = width/float(img.size[0])
-        height = int(ratio*float(img.size[1]))
+        ratio = width / float(img.size[0])
+        height = int(ratio * float(img.size[1]))
         img = img.resize((width, height), Image.NEAREST)
 
-    if message is not None:
+    if body is not None:
         draw = ImageDraw.Draw(img)
         font = ImageFont.truetype('./fonts/LilitaOne-Regular.ttf', size=20)
-        draw.text((10, 30), message, font=font, fill='white')
+        draw.text((10, 30), body, font=font, fill='white')
+
+    if author is not None:
+        draw = ImageDraw.Draw(img)
+        font = ImageFont.truetype('./fonts/LilitaOne-Regular.ttf', size=20)
+        draw.text((20, 40), author, font=font, fill='white')
 
     img.save(out_path)
     return out_path
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     print(make_meme('./imgs/img.jpg',
-                            './imgs/out.jpg',
-                            'woof!',
-                            (450, 900, 900, 1300),
-                            200))
+                    './imgs/out.jpg',
+                    'woof!',
+                    (450, 900, 900, 1300),
+                    200))
