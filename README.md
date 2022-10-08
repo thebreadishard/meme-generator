@@ -56,12 +56,13 @@ The script returns a path to a generated image. If any argument is not defined, 
 
 ### The Flask app
 
-The project contains flask app code in app.py. 
 A basic flask server consumes the models and make them usable through a web interface. The main code for this flask server is in app.py.
 
-The app uses the Quote Engine Module and Meme Generator Modules to generate a random captioned image.
+The app uses the Quote Engine and Meme Generator Modules to generate a random captioned image.
 
 It uses the requests package to fetch an image from a user submitted URL.
+
+#### Miscellaneous
 
 Sample quotes and images of Xander the pup are in ./_data/
 HTML templates are in templates/
