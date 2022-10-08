@@ -4,11 +4,11 @@ from PIL import Image, ImageDraw, ImageFont
 class MemeEngine:
     """Meme generator Class."""
 
-    def __init__(self, out_img_path):
-        if out_img_path is None:
+    def __init__(self, img_path_out):
+        if img_path_out is None:
             raise Exception("Where should the image be saved?")
         else:
-            self.out_img_path = out_img_path
+            self.img_path_out = img_path_out
 
     def make_meme(self, img_path, text=None, author=None, crop=None, width=500):
         """Create a Meme With a Quote
@@ -42,13 +42,5 @@ class MemeEngine:
             font = ImageFont.truetype('./fonts/LilitaOne-Regular.ttf', size=20)
             draw.text((20, 40), author, font=font, fill='white')
 
-        img.save(self.out_img_path)
-        return self.out_img_path
-
-
-if __name__ == '__main__':
-    print(make_meme('./imgs/img.jpg',
-                    './imgs/out.jpg',
-                    'woof!',
-                    (450, 900, 900, 1300),
-                    200))
+        img.save(self.img_path_out)
+        return self.img_path_out
