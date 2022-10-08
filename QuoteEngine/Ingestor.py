@@ -8,6 +8,8 @@ from .PDFIngestor import PDFIngestor
 from .TextIngestor import TextIngestor
 
 class Ingestor(IngestorInterface):
+    """Main Ingestor class.
+    This class encapsulates all the ingestors to provide one interface to load any supported file type."""
     importers = [DocxIngestor, CSVIngestor, PDFIngestor, TextIngestor]
 
     @classmethod

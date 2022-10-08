@@ -11,7 +11,7 @@ class IngestorInterface(ABC):
     @classmethod
     @abstractmethod
     def can_ingest(cls, path):
-        """Let's see if we can ingest this."""
+        """See if we can ingest this."""
         ext = path.split('.')[-1]
         return ext in cls.allowed_extensions
 
