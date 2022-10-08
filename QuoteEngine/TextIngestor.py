@@ -1,6 +1,6 @@
 from typing import List
 
-from .QuoteEngine import IngestorInterface
+from .IngestorInterface import IngestorInterface
 from .QuoteModel import QuoteModel
 
 

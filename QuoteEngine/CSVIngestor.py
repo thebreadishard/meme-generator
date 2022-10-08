@@ -1,7 +1,7 @@
 from typing import List
 import pandas
 
-from .QuoteEngine import IngestorInterface
+from .IngestorInterface import IngestorInterface
 from .QuoteModel import QuoteModel
 
 
