@@ -4,7 +4,10 @@ class MemeEngine():
     """Meme generator Class."""
 
     def __init__(self, out_path):
-        self.out_path = out_path
+        if out_path is None:
+            raise Exception("Where should the image be saved?")
+        else:
+            self.out_path = out_path
 
     def make_meme(self, img_path, text=None, author=None, crop=None, width=500):
         """Create a Meme With a Quote
