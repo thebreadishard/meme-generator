@@ -11,6 +11,7 @@ class DocxIngestor(IngestorInterface):
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
+        """Read the Word file paragraph by paragraph to make a list of quotes."""
         if not cls.can_ingest(path):
             raise Exception('cannot ingest exception')
 
