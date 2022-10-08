@@ -18,9 +18,12 @@ def make_meme(in_path, out_path, body=None, author=None, crop=None, width=None):
         img = img.crop(crop)
 
     if width is not None:
-        ratio = width / float(img.size[0])
-        height = int(ratio * float(img.size[1]))
-        img = img.resize((width, height), Image.NEAREST)
+        if width > 500:
+            raise Exception('Width must be 500 or less.')
+        else:
+            ratio = width / float(img.size[0])
+            height = int(ratio * float(img.size[1]))
+            img = img.resize((width, height), Image.NEAREST)
 
     if body is not None:
         draw = ImageDraw.Draw(img)
