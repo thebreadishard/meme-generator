@@ -1,6 +1,7 @@
 import os
 import random
 import argparse
+from pathlib import Path
 
 from QuoteEngine import Ingestor
 from QuoteEngine import QuoteModel
@@ -48,7 +49,7 @@ if __name__ == "__main__":
     # author - quote author to add to the image
 
     parser = argparse.ArgumentParser(description="Input image path, quote body and quote author.")
-    parser.add_argument('--path', type=str, default="", help="what is the path to the image?")
+    parser.add_argument('--path', type=Path, default='.', help="what is the path to the image?")
     parser.add_argument('--body', type=str, default="", help="what is the body of the quote?")
     parser.add_argument('--author', type=str, default="", help="who is the author of the quote?")
     args = parser.parse_args()
