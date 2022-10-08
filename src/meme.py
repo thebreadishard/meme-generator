@@ -2,7 +2,8 @@ import os
 import random
 import argparse
 
-from QuoteEngine import Ingestor, QuoteModel
+from QuoteEngine import Ingestor
+from QuoteEngine import QuoteModel
 import MemeEngine
 
 
