@@ -64,6 +64,6 @@ It uses the requests package to fetch an image from a user submitted URL.
 
 #### Miscellaneous
 
-Sample quotes and images of Xander the pup are in ./_data/
+Sample quotes and images of Xander the pup are in _data/
 
 HTML templates are in templates/
