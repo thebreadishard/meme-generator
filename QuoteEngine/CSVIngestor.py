@@ -11,6 +11,7 @@ class CSVIngestor(IngestorInterface):
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
+        """Read the file row by row to make a list of quotes."""
         if not cls.can_ingest(path):
             raise Exception('cannot ingest exception')
 
