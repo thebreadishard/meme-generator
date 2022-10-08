@@ -4,7 +4,7 @@ import argparse
 
 from QuoteEngine import Ingestor
 from QuoteEngine import QuoteModel
-import MemeEngine
+from MemeEngine import MemeEngine
 
 
 def generate_meme(path=None, body=None, author=None):
