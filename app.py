@@ -20,7 +20,7 @@ def setup():
 
     quotes = [Ingestor.parse(quote_file) for quote_file in quote_files]
 
-    images_path = "src/_data/photos/dog/"
+    images_path = "_data/photos/dog/"
 
     imgs = [img for img in images_path]
 
