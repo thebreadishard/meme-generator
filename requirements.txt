@@ -1,0 +1,12 @@
+abc
+argparse
+flask
+os
+pandas
+pathlib
+PIL
+python-docx
+random
+requests
+subprocess
+typing
