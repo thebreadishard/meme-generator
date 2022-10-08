@@ -2,14 +2,8 @@ Meme Generator
 
 This project is a "meme generator" – a multimedia application to dynamically generate memes, including an image with an overlaid quote.
 
-The application interacts with a variety of complex filetypes. It loads quotes from a variety of filetypes (PDF, Word Documents, CSVs, Text files).  It loads, manipulates, and saves images.
+The application loads quotes from a variety of filetypes (PDF, Word Documents, CSVs, Text files).  It loads, manipulates, and saves images.
 It accepts dynamic user input through a command-line tool and a web service. 
-
-Sample quotes and images of Xander the pup are in src/_data/
-
-A basic flask server consumes the models and make them usable through a web interface. The main code for this flask server is in app.py.
-
-HTML templates are in templates/
 
 Quote Engine
 
@@ -63,7 +57,11 @@ The script returns a path to a generated image. If any argument is not defined, 
 The Flask app
 
 The project contains flask app code in app.py. 
+A basic flask server consumes the models and make them usable through a web interface. The main code for this flask server is in app.py.
 
 The app uses the Quote Engine Module and Meme Generator Modules to generate a random captioned image.
 
 It uses the requests package to fetch an image from a user submitted URL.
+
+Sample quotes and images of Xander the pup are in ./_data/
+HTML templates are in templates/
