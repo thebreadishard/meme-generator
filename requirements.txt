@@ -2,9 +2,7 @@ argparse
 flask
 pandas
 pathlib
-PIL
+Pillow
 python-docx
-random
 requests
-subprocess
 typing
