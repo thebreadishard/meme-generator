@@ -1,6 +1,5 @@
 argparse
 flask
-os
 pandas
 pathlib
 PIL
