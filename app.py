@@ -60,7 +60,10 @@ def meme_post():
     body = request.form.get('body')
     author = request.form.get('author')
 
-    img = requests.get(image_url)
+    try:
+        img = requests.get(image_url)
+    except requests.exceptions.ConnectionError as e:
+        print('Cannot get image at this URL.')
 
     img_out = './out_img.jpg'
     with open(img_out, 'wb') as f:

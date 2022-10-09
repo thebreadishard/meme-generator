@@ -42,5 +42,9 @@ class MemeEngine:
             font = ImageFont.truetype('./fonts/LilitaOne-Regular.ttf', size=20)
             draw.text((20, 40), author, font=font, fill='white')
 
-        img.save(self.img_path_out)
+        try:
+            img.save(self.img_path_out)
+        except:
+            print(f'Cannot save image to {self.img_path_out}')
+
         return self.img_path_out
