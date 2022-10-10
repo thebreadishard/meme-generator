@@ -1,13 +1,13 @@
 import random
 import os
 import requests
-from flask import Flask, render_template, abort, request
+from flask import Flask, render_template, request
 from QuoteEngine import Ingestor
 from MemeEngine import MemeEngine
 
 app = Flask(__name__)
 
-meme = MemeEngine('./static')
+meme = MemeEngine('./static/image.jpeg')
 
 
 def setup():
@@ -18,13 +18,17 @@ def setup():
                    './_data/DogQuotes/DogQuotesPDF.pdf',
                    './_data/DogQuotes/DogQuotesCSV.csv']
 
-    quotes = [Ingestor.parse(quote_file) for quote_file in quote_files]
+    quote_list = []
+    for f in quote_files:
+        quote_list.extend(Ingestor.parse(f))
 
     images_path = "_data/photos/dog/"
 
-    imgs = [img for img in images_path]
+    img_list = []
+    for root, dirs, files in os.walk(images_path):
+        img_list = [os.path.join(root, name) for name in files]
 
-    return quotes, imgs
+    return quote_list, img_list
 
 
 quotes, imgs = setup()
@@ -59,10 +63,11 @@ def meme_post():
     image_url = request.form.get('image_url')
     body = request.form.get('body')
     author = request.form.get('author')
+    img = None
 
     try:
         img = requests.get(image_url)
-    except requests.exceptions.ConnectionError as e:
+    except requests.exceptions.ConnectionError:
         print('Cannot get image at this URL.')
 
     img_out = './out_img.jpg'
