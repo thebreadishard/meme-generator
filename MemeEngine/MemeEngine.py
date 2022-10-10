@@ -34,13 +34,13 @@ class MemeEngine:
 
         if text is not None:
             draw = ImageDraw.Draw(img)
-            font = ImageFont.truetype('./fonts/LilitaOne-Regular.ttf', size=20)
+            font = ImageFont.truetype('./fonts/LilitaOne-Regular.ttf', size=30)
             draw.text((10, 30), text, font=font, fill='white')
 
         if author is not None:
             draw = ImageDraw.Draw(img)
-            font = ImageFont.truetype('./fonts/LilitaOne-Regular.ttf', size=20)
-            draw.text((20, 40), author, font=font, fill='white')
+            font = ImageFont.truetype('./fonts/LilitaOne-Regular.ttf', size=30)
+            draw.text((10, 90), author, font=font, fill='white')
 
         try:
             img.save(self.img_path_out)

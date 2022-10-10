@@ -10,8 +10,6 @@ from MemeEngine import MemeEngine
 
 def generate_meme(path=None, body=None, author=None):
     """ Generate a meme given a path and a quote """
-    img = None
-    quote = None
 
     if path is None:
         images = "./_data/photos/dog/"
@@ -38,7 +36,7 @@ def generate_meme(path=None, body=None, author=None):
             raise Exception('Author Required if Body is Used')
         quote = QuoteModel(body, author)
 
-    meme = MemeEngine('./tmp')
+    meme = MemeEngine('./tmp/image.jpg')
     path = meme.make_meme(img, quote.body, quote.author)
     return path
 
@@ -50,7 +48,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Input image path, quote body and quote author.")
     parser.add_argument('--path', type=Path, help="what is the path to the image?")
-    parser.add_argument('--body', type=str, default="", help="what is the body of the quote?")
-    parser.add_argument('--author', type=str, default="", help="who is the author of the quote?")
+    parser.add_argument('--body', type=str, help="what is the body of the quote?")
+    parser.add_argument('--author', type=str, help="who is the author of the quote?")
     args = parser.parse_args()
     print(generate_meme(args.path, args.body, args.author))
