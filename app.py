@@ -63,6 +63,7 @@ def meme_post():
     image_url = request.form.get('image_url')
     body = request.form.get('body')
     author = request.form.get('author')
+
     img = None
 
     try:
@@ -70,12 +71,12 @@ def meme_post():
     except requests.exceptions.ConnectionError:
         print('Cannot get image at this URL.')
 
-    img_out = './out_img.jpg'
-    with open(img_out, 'wb') as f:
+    tmp_img = './temp.jpg'
+    with open(tmp_img, 'wb') as f:
         f.write(img.content)
 
-    path = meme.make_meme(img_out, body, author)
-    os.remove(img_out)
+    path = meme.make_meme(tmp_img, body, author)
+    os.remove(tmp_img)
 
     return render_template('meme.html', path=path)
 
