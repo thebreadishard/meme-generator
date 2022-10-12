@@ -1,3 +1,5 @@
+"""Text Ingestor of the Quote Engine module."""
+
 from typing import List
 
 from .IngestorInterface import IngestorInterface
@@ -6,6 +8,7 @@ from .QuoteModel import QuoteModel
 
 class TextIngestor(IngestorInterface):
     """Import quotes from a txt-file."""
+
     allowed_extensions = ['txt']
 
     @classmethod
