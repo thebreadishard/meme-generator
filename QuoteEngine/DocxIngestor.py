@@ -1,3 +1,5 @@
+"""Docx Ingestor of the Quote Engine module."""
+
 from typing import List
 import docx
 
@@ -7,6 +9,7 @@ from .QuoteModel import QuoteModel
 
 class DocxIngestor(IngestorInterface):
     """Import quotes from a Word-document."""
+
     allowed_extensions = ['docx']
 
     @classmethod
