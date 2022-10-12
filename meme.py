@@ -1,4 +1,4 @@
-""" Meme generator command line tool. """
+"""Meme generator command line tool."""
 
 import os
 import random
@@ -11,8 +11,7 @@ from MemeEngine import MemeEngine
 
 
 def generate_meme(path=None, body=None, author=None):
-    """ Generate a meme given a path and a quote.
-    """
+    """Generate a meme given a path and a quote."""
     if path is None:
         images = "./_data/photos/dog/"
         imgs = []
