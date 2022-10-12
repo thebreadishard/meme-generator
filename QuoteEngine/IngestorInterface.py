@@ -1,3 +1,5 @@
+"""The interface to each of the different Ingestors."""
+
 from abc import ABC, abstractmethod
 from typing import List
 from .QuoteModel import QuoteModel
@@ -18,4 +20,6 @@ class IngestorInterface(ABC):
     @classmethod
     @abstractmethod
     def parse(cls, path: str) -> List[QuoteModel]:
+        """Parse as defined in each Ingestor.
+        """
         pass
