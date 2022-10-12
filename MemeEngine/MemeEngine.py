@@ -2,16 +2,18 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 class MemeEngine:
-    """Meme generator Class."""
-
+    """Meme generator Class.
+    """
     def __init__(self, img_path_out):
+        """Initialize MemeEngine object.
+        """
         if img_path_out is None:
             raise Exception("Where should the image be saved?")
         else:
             self.img_path_out = img_path_out
 
     def make_meme(self, path, text=None, author=None, crop=None, width=500):
-        """Create a Meme With a Quote
+        """Create a Meme With a Quote.
 
         Arguments:
             img_path {str} -- the file location for the input image.

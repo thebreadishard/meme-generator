@@ -1,3 +1,5 @@
+"""Initialize the Quote Engine module."""
+
 from .DocxIngestor import DocxIngestor
 from .CSVIngestor import CSVIngestor
 from .TextIngestor import TextIngestor
