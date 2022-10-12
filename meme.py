@@ -46,9 +46,9 @@ if __name__ == "__main__":
     # body - quote body to add to the image
     # author - quote author to add to the image
 
-    parser = argparse.ArgumentParser(description="Input image path, quote body and quote author.")
-    parser.add_argument('--path', type=Path, help="what is the path to the image?")
-    parser.add_argument('--body', type=str, help="what is the body of the quote?")
-    parser.add_argument('--author', type=str, help="who is the author of the quote?")
+    parser = argparse.ArgumentParser(description="Path, quote and author?")
+    parser.add_argument('--path', type=Path, help="what is the image path?")
+    parser.add_argument('--body', type=str, help="what is the quote?")
+    parser.add_argument('--author', type=str, help="who is the author?")
     args = parser.parse_args()
     print(generate_meme(args.path, args.body, args.author))

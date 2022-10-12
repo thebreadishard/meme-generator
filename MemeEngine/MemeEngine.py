@@ -10,19 +10,20 @@ class MemeEngine:
         else:
             self.img_path_out = img_path_out
 
-    def make_meme(self, img_path, text=None, author=None, crop=None, width=500):
+    def make_meme(self, path, text=None, author=None, crop=None, width=500):
         """Create a Meme With a Quote
 
         Arguments:
             img_path {str} -- the file location for the input image.
             text {str} -- the body of the quote
             author {str} -- the author of the quote
-            crop {tuple} -- The crop rectangle, as a (left, upper, right, lower)-tuple. Default=None.
+            crop {tuple} -- The crop rectangle, as a (left, upper, right,
+                lower)-tuple. Default=None.
             width {int} -- The pixel width value. Default=500.
         Returns:
             str -- the file path to the output image.
         """
-        img = Image.open(img_path)
+        img = Image.open(path)
 
         if crop is not None:
             img = img.crop(crop)
@@ -42,9 +43,6 @@ class MemeEngine:
             font = ImageFont.truetype('./fonts/LilitaOne-Regular.ttf', size=30)
             draw.text((10, 90), author, font=font, fill='white')
 
-        try:
-            img.save(self.img_path_out)
-        except:
-            print(f'Cannot save image to {self.img_path_out}')
+        img.save(self.img_path_out)
 
         return self.img_path_out
