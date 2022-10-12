@@ -20,6 +20,5 @@ class IngestorInterface(ABC):
     @classmethod
     @abstractmethod
     def parse(cls, path: str) -> List[QuoteModel]:
-        """Parse as defined in each Ingestor.
-        """
+        """Parse as defined in each Ingestor."""
         pass

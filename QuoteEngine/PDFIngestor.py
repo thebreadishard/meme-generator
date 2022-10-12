@@ -12,6 +12,7 @@ from .QuoteModel import QuoteModel
 
 class PDFIngestor(IngestorInterface):
     """Import quotes from a pdf-document."""
+
     allowed_extensions = ['pdf']
 
     @classmethod

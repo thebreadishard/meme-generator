@@ -1,14 +1,15 @@
+"""The Meme Engine for the project."""
+
 from PIL import Image, ImageDraw, ImageFont
 from random import randint
 import textwrap
 
 
 class MemeEngine:
-    """Meme generator Class.
-    """
+    """Meme generator Class."""
+
     def __init__(self, img_path_out):
-        """Initialize MemeEngine object.
-        """
+        """Initialize MemeEngine object."""
         if img_path_out is None:
             raise Exception("Where should the image be saved?")
         else:
