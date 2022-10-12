@@ -1,5 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont
 from random import randint
+import textwrap
+
 
 class MemeEngine:
     """Meme generator Class.
@@ -38,7 +40,8 @@ class MemeEngine:
         if text is not None:
             draw = ImageDraw.Draw(img)
             font = ImageFont.truetype('./fonts/LilitaOne-Regular.ttf', size=30)
-            draw.text((randint(10, 100), randint(10, 100)), text,
+            draw.text((randint(10, 100), randint(10, 100)),
+                      textwrap.fill(text, width=40),
                       font=font, fill='white')
 
         if author is not None:
