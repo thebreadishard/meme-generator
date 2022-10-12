@@ -1,3 +1,5 @@
+"""CSV Ingestor of the Quote Engine module."""
+
 from typing import List
 import pandas
 
@@ -7,6 +9,7 @@ from .QuoteModel import QuoteModel
 
 class CSVIngestor(IngestorInterface):
     """Import quotes from a csv-file."""
+
     allowed_extensions = ['csv']
 
     @classmethod

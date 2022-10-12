@@ -1,3 +1,5 @@
+"""PDF Ingestor of the Quote Engine module."""
+
 from typing import List
 import subprocess
 import os
@@ -14,8 +16,9 @@ class PDFIngestor(IngestorInterface):
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
-        """Turn pdf into text,
-         and read the text file line by line to make a list of quotes."""
+        """Turn pdf into text.
+        And read the text file line by line to make a list of quotes.
+        """
         if not cls.can_ingest(path):
             raise Exception('cannot ingest exception')
 
