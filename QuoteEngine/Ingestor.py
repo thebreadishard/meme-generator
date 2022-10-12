@@ -1,3 +1,5 @@
+"""All ingestors are packaged into a main Ingestor class."""
+
 from typing import List
 
 from .IngestorInterface import IngestorInterface
@@ -17,6 +19,8 @@ class Ingestor(IngestorInterface):
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
+        """Parse the file to get a list of quotes.
+        """
         for importer in cls.importers:
             if importer.can_ingest(path):
                 return importer.parse(path)
